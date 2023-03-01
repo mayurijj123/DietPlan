@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect, ChangeEvent } from "react";
 import Table from "./Table";
 
-const Posts = ({ posts }) => {
+const Test = ({ posts }) => {
   // const [dataId, setdataId] = useState();
   const [searchInput, setSearchInput] = useState("");
   const [data, setData] = useState([]);
@@ -99,7 +99,7 @@ const Posts = ({ posts }) => {
   };
   console.log(clearResults);
   return (
-    <div>
+    <div className="sm:overflow-x-hidden">
       <div className="p-4 ml-56 m-8 bg-[#FFD57F] rounded-xl w-96 grid grid-cols-3 items-center">
         {!showMealOption && (
           <div className="p-2 w-40 font-bold text-center justify-self-center bg-[#FFB26B] col-span-1 col-start-2 rounded-xl">
@@ -217,6 +217,35 @@ const Posts = ({ posts }) => {
           </div>
         </div>
       </div>
+
+      <div class="relative overflow-x-auto">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+              <th className="px-6 py-3 border border-slate-600">ID</th>
+              <th className="px-6 py-3 border border-slate-600">Food Name</th>
+              <th className="px-6 py-3 border border-slate-600">
+                Food Category
+              </th>
+              <th className="px-6 py-3 border border-slate-600">Protiens(g)</th>
+              <th className="px-6 py-3 border border-slate-600">Carbs(g)</th>
+              <th className="px-6 py-3 border border-slate-600">Fats(g)</th>
+              <th className="px-6 py-3 border border-slate-600">Calories</th>
+              <th className="px-6 py-3 border border-slate-600">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {searchInput.length > 1
+              ? filteredResults.map((post) => {
+                  return <Table post={post} mealNumber={mealNumber} />;
+                })
+              : posts.map((post) => {
+                  return <Table post={post} mealNumber={mealNumber} />;
+                })}
+          </tbody>
+        </table>
+      </div>
+
       <table className="w-full text-xs text-left text-gray-500 font-bold dark:text-gray-400 border-collapse border border-slate-500 mt-8">
         {" "}
         <thead className=" text-white font-bold text-md uppercase bg-[#FFD57F] dark:bg-[#FFD56F] dark:text-black">
@@ -245,4 +274,4 @@ const Posts = ({ posts }) => {
   );
 };
 
-export default Posts;
+export default Test;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Sidebar from "./Sidebar";
 import Pagination from "./Pagination";
 import Post from "./Post";
+import Test from "./Test";
 const Home = () => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -32,11 +33,11 @@ const Home = () => {
   return (
     <>
       <div className="flex">
-        <div>
+        <div className="">
           <Sidebar />
         </div>
         <div className="flex-1 relative overflow-x-auto mt-5 ml-20 mr-16">
-          <Post posts={currentPosts} />
+          <Test posts={currentPosts} />
           <Pagination
             postsPerPage={postsPerPage}
             totalPosts={data.length}

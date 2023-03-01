@@ -63,7 +63,8 @@ const Analytics = () => {
         y={y}
         fill="white"
         textAnchor={x > cx ? "start" : "end"}
-        dominantBaseline="central"
+        dominantBaseline="right"
+        alignmentBaseline="bottom"
       >
         {`${(percent * 100).toFixed(0)}%`}
       </text>
@@ -75,15 +76,17 @@ const Analytics = () => {
       <div>
         <Sidebar />
       </div>
+
       <div className="flex-1 p-8">
         <ResponsiveContainer className="text-center">
-          <PieChart width={700} height={700}>
+          <PieChart>
             <Legend layout="vertical" verticalAlign="top" align="top" />
             <Pie
               data={chartdata}
               dataKey="students"
-              outerRadius={150}
+              outerRadius={80}
               fill="green"
+              labelLine={false}
               label={renderCustomizedLabel}
             >
               {data.map((entry, index) => (

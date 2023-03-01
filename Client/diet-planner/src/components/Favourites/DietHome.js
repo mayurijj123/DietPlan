@@ -8,27 +8,38 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(5);
   const [posts, setPosts] = useState([]);
-
+  const [type, setType] = useState("breakfast");
+  const [length, setLength] = useState();
+  const [url, setURL] = useState(`http://localhost:5000/api/${type}`);
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
 
-  // Change page
   const paginateFront = () => setCurrentPage(currentPage + 1);
   const paginateBack = () => setCurrentPage(currentPage - 1);
 
   useEffect(() => {
     const loadData = async () => {
-      const response = await fetch("http://localhost:5000/api/diet");
+      const response = await fetch(url);
       const resData = await response.json();
       console.log(resData);
       setData(resData);
       setPosts(resData);
-
-      console.log(resData);
     };
     loadData();
-  }, []);
+  }, [url]);
+  const handleOnClick = async (e) => {
+    let type = e.target.value;
+    setType(e.target.value);
+    localStorage.setItem("Meal", e.target.value);
+    setURL(`http://localhost:5000/api/${type}`);
+    console.log(url);
+    const response = await fetch(url);
+    const resData = await response.json();
+    setData(resData);
+    setPosts(resData);
+  };
+
   return (
     <>
       <div className="flex">
@@ -43,8 +54,34 @@ const Home = () => {
                 className="block w-full px-4 py-2 text-black bg-white border rounded-md focus:border-[#FFB26B] focus:ring-[#FFB26B] focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Search..."
               />
-              <button className="px-4 text-white dark:bg-[#FFD56F] border-l rounded ">
+              <button className="px-4 text-black dark:bg-[#FFD56F] border-l rounded ">
                 Search
+              </button>
+            </div>
+            <div className=" bg-[#FFD56F] dark:bg-[#FFD56F] px-4 py-2 ml-96">
+              <button
+                value="breakfast"
+                id="breakfast"
+                onClick={handleOnClick}
+                className="items-center p-2 mx-1 text-base font-bold text-black rounded-lg dark:text-black hover:bg-white dark:hover:bg-white "
+              >
+                Breakfast
+              </button>
+              <button
+                value="lunch"
+                id="lunch"
+                onClick={handleOnClick}
+                className="items-center p-2 text-base font-bold text-black rounded-lg dark:text-black hover:bg-white dark:hover:bg-white"
+              >
+                Lunch
+              </button>
+              <button
+                value="dinner"
+                id="dinner"
+                onClick={handleOnClick}
+                className="items-center p-2 mx-1 text-base font-bold text-black rounded-lg dark:text-black hover:bg-white dark:hover:bg-white"
+              >
+                Dinner
               </button>
             </div>
           </div>

@@ -2,26 +2,22 @@ import { useState, useEffect } from "react";
 import { RiDashboardFill } from "react-icons/ri";
 import { BsFillCheckSquareFill } from "react-icons/bs";
 import { BsArrowLeftShort } from "react-icons/bs";
-import Home from "./Home";
 import { AiFillPieChart } from "react-icons/ai";
-const Sidebar = () => {
+const DietSidebar = (datalength) => {
   const [open, setOpen] = useState(true);
-  const [data, setData] = useState([]);
-  const [length, setLength] = useState();
-  const meal = localStorage.getItem("Meal");
-  console.log("Meal: " + meal);
-  useEffect(() => {
-    const loadData = async () => {
-      const response = await fetch(`http://localhost:5000/api/${meal}`);
-      const resData = await response.json();
-      console.log(resData);
-      setData(resData);
-      setLength(resData.length);
-      console.log(resData);
-    };
-    loadData();
-  }, [meal]);
-  console.log("length of data :", length);
+  // const [data, setData] = useState([]);
+  // useEffect(() => {
+  //   const loadData = async () => {
+  //     const response = await fetch("http://localhost:5000/api/diet");
+  //     const resData = await response.json();
+  //     console.log(resData);
+  //     setData(resData);
+
+  //     console.log(resData);
+  //   };
+  //   loadData();
+  // }, []);
+  // console.log(data.length);
   return (
     <div className="flex h-full overflow-y-visible ">
       <div
@@ -80,7 +76,7 @@ const Sidebar = () => {
                     !open && "hidden"
                   } origin-left duration-200 inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-black bg-black rounded-full dark:bg-black dark:text-white`}
                 >
-                  {length}
+                  {datalength}
                 </span>
               </a>
             </li>
@@ -108,4 +104,4 @@ const Sidebar = () => {
     </div>
   );
 };
-export default Sidebar;
+export default DietSidebar;

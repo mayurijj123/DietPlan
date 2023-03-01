@@ -3,7 +3,6 @@ import { useState } from "react";
 const Table = ({ post, mealNumber }) => {
   const [mealType, setMealType] = useState("");
   const [dataId, setdataId] = useState();
-
   const getMealType = async (event) => {
     const { value, checked, id } = event.target;
     console.log(`${value} is ${checked}`);
@@ -14,11 +13,13 @@ const Table = ({ post, mealNumber }) => {
       setMealType("");
     }
   };
+  console.log(mealType);
   const getId = async (event) => {
     let id = event.target.getAttribute("id");
     setdataId(id);
     console.log(id);
     const data = { rowId: id, type: mealType, number: mealNumber };
+    alert(`${id} Added to ${mealType} Successfully`);
     fetch("http://localhost:5000/api/get", {
       method: "POST",
       headers: {
