@@ -9,11 +9,11 @@ export default function Pagination({
   currentPage,
 }) {
   return (
-    <div className="py-2">
+    <div className="py-2 ">
       <nav className="block"></nav>
       <div>
         <nav
-          className="mt-12 mb-16 right-0 grid grid-cols-8"
+          className="mt-12 md:ml-96 md:mr-0 mb-16 right-0 ml-12 lg:grid lg:grid-cols-8"
           aria-label="Pagination"
         >
           <a
