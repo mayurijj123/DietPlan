@@ -23,11 +23,12 @@ const Sidebar = () => {
   }, [meal]);
   console.log("length of data :", length);
   return (
-    <div className="flex h-full overflow-y-visible ">
+    <div className="flex h-full overflow-y-visible">
       <div
         className={` ${
-          open ? "w-64" : "w-20 "
+          open ? "w-64" : "w-20"
         } dark:bg-gradient-to-l from-[#FF7B54]  to-[#FFB26B] h-screen p-5  pt-8 relative duration-300 `}
+        
       >
         <BsArrowLeftShort
           size={30}
