@@ -99,18 +99,18 @@ const Test = ({ posts }) => {
   };
   console.log(clearResults);
   return (
-    <div className="sm:overflow-x-hidden">
-      <div className="p-4 ml-56 m-8 bg-[#FFD57F] rounded-xl w-96 grid grid-cols-3 items-center">
+    <div className="overflow-x-hidden">
+      <div className="lg:p-4 md:p-4 md:ml-44 p-2 m-4 lg:ml-[300px]  bg-[#FFD57F] rounded-xl w-60 lg:w-96 lg:grid lg:grid-cols-3 lg:items-center">
         {!showMealOption && (
-          <div className="p-2 w-40 font-bold text-center justify-self-center bg-[#FFB26B] col-span-1 col-start-2 rounded-xl">
+          <div className="p-2 lg:w-40 font-bold text-center justify-self-center bg-[#FFB26B] lg:col-span-1 lg:col-start-2 rounded-xl">
             <button onClick={() => setShowMealOption(!showMealOption)}>
               Select Meal Plan
             </button>
           </div>
         )}
         {showMealOption && (
-          <div className="p-2 w-40 font-bold text-center justify-self-center  col-span-1 col-start-2 rounded-xl">
-            <ul class="w-48 mr-32 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-[#FFB26B] dark:border-[#FFD57F] dark:text-black">
+          <div className="lg:p-4  lg:m-4 lg:w-80 p-0 w-20 font-bold text-center justify-self-center lg:col-span-1 lg:col-start-2 rounded-xl">
+            <ul class="lg:w-72 w-48 m-4 lg:m-0 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-[#FFB26B] dark:border-[#FFD57F] dark:text-black">
               <li class="w-full border-b border-gray-200 rounded-t-lg ">
                 <div class="flex items-center pl-3">
                   <input
@@ -120,11 +120,11 @@ const Test = ({ posts }) => {
                     checked={mealPlan === "2"}
                     name="myCheckbox"
                     onChange={getMealPlan}
-                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                    class="w-4 h-4 lg:m-0 lg:w-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
                   />
                   <label
                     for="twoMeal-checkbox"
-                    class="w-full py-3 ml-2 text-sm font-medium text-black"
+                    class="w-full py-3 lg:ml-2 text-sm font-medium text-black"
                   >
                     Two Meal Plan{" "}
                   </label>
@@ -139,7 +139,7 @@ const Test = ({ posts }) => {
                     checked={mealPlan === "3"}
                     name="myCheckbox"
                     onChange={getMealPlan}
-                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                    class="w-4 h-4 lg:m-0 lg:w-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
                   />
                   <label
                     for="react-checkbox"
@@ -158,7 +158,7 @@ const Test = ({ posts }) => {
                     checked={mealPlan === "4"}
                     name="myCheckbox"
                     onChange={getMealPlan}
-                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                    class="w-4 h-4 lg:m-0 lg:w-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
                   />
                   <label
                     for="angular-checkbox"
@@ -177,7 +177,7 @@ const Test = ({ posts }) => {
                     checked={mealPlan === "5"}
                     name="myCheckbox"
                     onChange={getMealPlan}
-                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                    class="w-4 h-4 lg:m-0 lg:w-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
                   />
                   <label
                     for="laravel-checkbox"
@@ -192,46 +192,55 @@ const Test = ({ posts }) => {
         )}
       </div>
       <div>
-        <div className="flex items-center mt-12 mb-2 justify-right">
-          <div className="flex border border-purple-200 rounded">
+        <div className="lg:flex items-center lg:mt-12 lg:mb-2 lg:ml-4 lg:justify-right">
+          <div className="lg:flex flex md:ml-40 mt-8 border-purple-200 rounded">
             <input
               type="text"
-              className="block w-full px-4 py-2 text-black bg-white border rounded-md focus:border-[#FFB26B] focus:ring-[#FFB26B] focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-40 lg:w-80 px-4 py-2 text-black bg-white  rounded-md focus:border-[#FFB26B] focus:ring-[#FFB26B] focus:outline-none focus:ring focus:ring-opacity-40"
               placeholder="Search..."
               onChange={(e) => searchItems(e.target.value)}
             />
-            <button className="px-4 text-white dark:bg-[#FFD56F] border-l rounded ">
+            <button className="px-4 py-2 flex ml-4 text-white dark:bg-[#FFD56F]  rounded ">
               Search
             </button>
           </div>
-          <div className="ml-60 ">
+          <div className="lg:ml-60 md:ml-56 lg:m-8 mt-8 ml-12 mb-8 ">
             <button
               id="clearResults"
               value="clear"
               type="button"
               onClick={handleClearData}
-              className="p-2 text-white dark:bg-[#FFD56F] border-l rounded active:bg-transparent focus:outline-none  "
+              className="p-2 lg:flex text-white dark:bg-[#FFD56F] border-l rounded active:bg-transparent focus:outline-none  "
             >
               Delete Previous Diet
             </button>
           </div>
         </div>
       </div>
+      
 
       <div class="relative overflow-x-auto">
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <thead class="text-xs text-gray-700 uppercase bg-[#FFD57F] dark:bg-[#FFD57F] dark:text-black">
             <tr>
-              <th className="px-6 py-3 border border-slate-600">ID</th>
-              <th className="px-6 py-3 border border-slate-600">Food Name</th>
-              <th className="px-6 py-3 border border-slate-600">
+              <th className="px-6 py-3 border border-slate-600 lg:inline-flex md:inline-flex">ID</th>
+              <th className="px-6 py-3 border border-slate-600  lg:inline-flex lg:w-60 text-center md:inline-flex md:w-[200px]">Food Name</th>
+              <th className="px-6 py-3 border border-slate-600 hidden  lg:inline-flex md:inline-flex md:w-[224px] lg:w-56">
                 Food Category
               </th>
-              <th className="px-6 py-3 border border-slate-600">Protiens(g)</th>
-              <th className="px-6 py-3 border border-slate-600">Carbs(g)</th>
-              <th className="px-6 py-3 border border-slate-600">Fats(g)</th>
-              <th className="px-6 py-3 border border-slate-600">Calories</th>
-              <th className="px-6 py-3 border border-slate-600">Action</th>
+              <th className="px-6 py-3 border border-slate-600 hidden lg:inline-flex lg:w-44">
+                Protiens(g)
+              </th>
+              <th className="px-6 py-3 border border-slate-600 hidden lg:inline-flex lg:w-[120px]">
+                Carbs(g)
+              </th>
+              <th className="px-6 py-3 border border-slate-600 hidden lg:inline-flex " >
+                Fats(g)
+              </th>
+              <th className="px-6 py-3 border border-slate-600 hidden lg:inline-flex ">
+                Calories
+              </th>
+              <th className="px-6 py-3 border border-slate-600 inli lg:inline-flex md:inline-flex">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -252,12 +261,22 @@ const Test = ({ posts }) => {
           <tr>
             <th className="px-6 py-3 border border-slate-600">ID</th>
             <th className="px-6 py-3 border border-slate-600">Food Name</th>
-            <th className="px-6 py-3 border border-slate-600">Food Category</th>
-            <th className="px-6 py-3 border border-slate-600">Protiens(g)</th>
-            <th className="px-6 py-3 border border-slate-600">Carbs(g)</th>
-            <th className="px-6 py-3 border border-slate-600">Fats(g)</th>
-            <th className="px-6 py-3 border border-slate-600">Calories</th>
-            <th className="px-6 py-3 border border-slate-600">Action</th>
+            <th className="px-6 py-3 border border-slate-600 hidden ">
+              Food Category
+            </th>
+            <th className="px-6 py-3 border border-slate-600 hidden ">
+              Protiens(g)
+            </th>
+            <th className="px-6 py-3 border border-slate-600 hidden ">
+              Carbs(g)
+            </th>
+            <th className="px-6 py-3 border border-slate-600 hidden ">
+              Fats(g)
+            </th>
+            <th className="px-6 py-3 border border-slate-600 hidden">
+              Calories
+            </th>
+            <th className="px-6 py-3 border border-slate-600 ">Action</th>
           </tr>
         </thead>
         <tbody>

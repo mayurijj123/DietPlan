@@ -46,19 +46,19 @@ const Home = () => {
         <div>
           <Sidebar />
         </div>
-        <div className="flex-1 relative overflow-x-auto mt-5 ml-20 mr-16">
-          <div className="flex items-center mt-5 justify-right">
-            <div className="flex border border-purple-200 rounded">
+        <div className="lg:flex-1 relative overflow-x-auto mt-5 ml-20 mr-16">
+          <div className="lg:flex items-center mt-5 justify-right ">
+            <div className="flex  rounded md:ml-32">
               <input
                 type="text"
-                className="block w-full px-4 py-2 text-black bg-white border rounded-md focus:border-[#FFB26B] focus:ring-[#FFB26B] focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-44 md:w-80  lg:w-full px-4 py-2 text-black bg-white border rounded-md focus:border-[#FFB26B] focus:ring-[#FFB26B] focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Search..."
               />
-              <button className="px-4 text-black dark:bg-[#FFD56F] border-l rounded ">
+              <button className="px-4 text-black md:mr-20 dark:bg-[#FFD56F] border-l rounded ">
                 Search
               </button>
             </div>
-            <div className=" bg-[#FFD56F] dark:bg-[#FFD56F] px-4 py-2 ml-96">
+            <div className=" md:mr-40 md:ml-44 bg-[#FFD56F] dark:bg-[#FFD56F] px-2 py-2 lg:ml-96 mt-8 rounded">
               <button
                 value="breakfast"
                 id="breakfast"

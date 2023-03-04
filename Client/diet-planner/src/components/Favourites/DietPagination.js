@@ -13,7 +13,7 @@ export default function Pagination({
       <nav className="block"></nav>
       <div>
         <nav
-          className="mt-12 mb-16 right-0 grid grid-cols-8"
+          className="lg:mt-12 lg:mb-16 mt-8  justify-center lg:right-0 grid lg:grid-cols-8"
           aria-label="Pagination"
         >
           <a

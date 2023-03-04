@@ -115,18 +115,18 @@ const Posts = ({ posts }) => {
           {" "}
           <thead className=" text-white font-bold text-md uppercase bg-[#FFD57F] dark:bg-[#FFD56F] dark:text-black">
             <tr>
-              <th className="px-6 py-3 border border-slate-600">ID</th>
-              <th className="px-6 py-3 border border-slate-600">Food Name</th>
-              <th className="px-6 py-3 border border-slate-600">
+              <th className="px-6 py-3 border border-slate-600 lg:w-8">ID</th>
+              <th className="px-6 py-3 border border-slate-600 lg:w-40 md:w-[220px]">Food Name</th>
+              <th className="px-6 py-3 border border-slate-600 hidden lg:inline-flex md:inline-flex lg:w-[160px] md:w-[230px]">
                 Food Category
               </th>
-              <th className="px-6 py-3 border border-slate-600">Protiens(g)</th>
-              <th className="px-6 py-3 border border-slate-600">Carbs(g)</th>
-              <th className="px-6 py-3 border border-slate-600">Fats(g)</th>
-              <th className="px-6 py-3 border border-slate-600">Calories</th>
+              <th className="px-6 py-3 border border-slate-600 hidden lg:inline-flex lg:w-[160px]" >Protiens(g)</th>
+              <th className="px-6 py-3 border border-slate-600 hidden lg:inline-flex lg:w-[160px]">Carbs(g)</th>
+              <th className="px-6 py-3 border border-slate-600 hidden lg:inline-flex lg:w-[160px]">Fats(g)</th>
+              <th className="px-6 py-3 border border-slate-600 hidden lg:inline-flex lg:w-[160px]">Calories</th>
               <th className="px-6 py-3 border border-slate-600">Action</th>
             </tr>
-            <tr className="bg-white">
+            <tr className="bg-white hidden ">
               <td className="px-6 py-4 border border-slate-700 text-black text-center">
                 -
               </td>
@@ -145,7 +145,7 @@ const Posts = ({ posts }) => {
               <td className="px-6 py-4 border border-slate-700 text-black text-center">
                 {totalFats.toFixed(2)}
               </td>
-              <td className="px-6 py-4 border border-slate-700 text-black text-center">
+              <td className="px-6 py-4 border border-slate-700 text-black text-center ">
                 {totalCalories.toFixed(2)}
               </td>
               <td className="px-6 py-4 border border-slate-700 text-black text-center"></td>
@@ -197,7 +197,7 @@ const Posts = ({ posts }) => {
       </div>
       <div>
         <button
-          className="items-center p-2 mx-1 text-base font-bold text-black dark:bg-[#FFD56F] mt-16 border border-yellow-600 rounded-lg dark:text-black hover:bg-white dark:hover:bg-white "
+          className="items-center mt-8 md:w-40 md:ml-56 lg:ml-96 lg:p-2 lg:w-40 justify-center p-2 mx-16 text-base font-bold text-black dark:bg-[#FFD56F]  border border-yellow-600 rounded-lg dark:text-black hover:bg-white dark:hover:bg-white "
           onClick={() => exportPDF()}
         >
           Generate Pdf
