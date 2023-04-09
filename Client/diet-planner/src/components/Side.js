@@ -12,7 +12,7 @@ const App = () => {
       <div
         className={` ${
           open ? "w-72" : "w-20 "
-        } dark:bg-gradient-to-l from-[#FF7B54]  to-[#FFB26B] h-screen p-5  pt-8 relative duration-300`}
+        } dark:bg-gradient-to-l from-[#FF7B54]  to-[#FFB26B] h-max p-5  pt-8 relative duration-300`}
       >
         <BsArrowLeftShort
           size={30}

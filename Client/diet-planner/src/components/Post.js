@@ -221,7 +221,7 @@ const Posts = ({ posts }) => {
         {" "}
         <thead className=" text-white font-bold text-md uppercase bg-[#FFD57F] dark:bg-[#FFD56F] dark:text-black">
           <tr>
-            <th className="px-6 py-3 border border-slate-600">ID</th>
+            <th className="px-6 py-3 border border-slate-600 ">ID</th>
             <th className="px-6 py-3 border border-slate-600">Food Name</th>
             <th className="px-6 py-3 border border-slate-600">Food Category</th>
             <th className="px-6 py-3 border border-slate-600">Protiens(g)</th>

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { RiDashboardFill } from "react-icons/ri";
 import { BsFillCheckSquareFill } from "react-icons/bs";
 import { BsArrowLeftShort } from "react-icons/bs";
+import { AiFillCalculator } from "react-icons/ai";
 import Home from "./Home";
 import { AiFillPieChart } from "react-icons/ai";
 const Sidebar = () => {
@@ -23,16 +24,15 @@ const Sidebar = () => {
   }, [meal]);
   console.log("length of data :", length);
   return (
-    <div className="flex h-full overflow-y-visible">
+    <div className="flex h-full overflow-y-visible ">
       <div
         className={` ${
           open ? "w-64" : "w-20"
         } dark:bg-gradient-to-l from-[#FF7B54]  to-[#FFB26B] h-screen p-5  pt-8 relative duration-300 `}
-        
       >
         <BsArrowLeftShort
           size={30}
-          className={`absolute cursor-pointer -right-3 top-9 w-7 border-black
+          className={`absolute cursor-pointer -right-3 top-9 w-7 border-black 
            border-2 rounded-full  ${!open && "rotate-180"}`}
           onClick={() => setOpen(!open)}
         />
@@ -97,6 +97,21 @@ const Sidebar = () => {
                   } origin-left duration-200 `}
                 >
                   Analytics
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/bmi"
+                className="flex items-center p-2 text-base font-normal text-black rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-white"
+              >
+                <AiFillCalculator size={25} className="text-black" />
+                <span
+                  className={`flex-1 ml-3 whitespace- ${
+                    !open && "hidden"
+                  } origin-left duration-200 `}
+                >
+                  BMI
                 </span>
               </a>
             </li>

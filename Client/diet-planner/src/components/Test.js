@@ -192,8 +192,8 @@ const Test = ({ posts }) => {
         )}
       </div>
       <div>
-        <div className="lg:flex items-center lg:mt-12 lg:mb-2 lg:ml-4 lg:justify-right">
-          <div className="lg:flex flex md:ml-40 mt-8 border-purple-200 rounded">
+        <div className="md:flex items-center lg:mt-12 lg:mb-2 lg:ml-4 lg:justify-right">
+          <div className="md:flex flex md:ml-40 mt-8 border-purple-200 rounded">
             <input
               type="text"
               className="block w-40 lg:w-80 px-4 py-2 text-black bg-white  rounded-md focus:border-[#FFB26B] focus:ring-[#FFB26B] focus:outline-none focus:ring focus:ring-opacity-40"
@@ -204,7 +204,7 @@ const Test = ({ posts }) => {
               Search
             </button>
           </div>
-          <div className="lg:ml-60 md:ml-56 lg:m-8 mt-8 ml-12 mb-8 ">
+          <div className=" md:ml-20 mt-16 ml-12 mb-8 md:w-40">
             <button
               id="clearResults"
               value="clear"
@@ -217,30 +217,36 @@ const Test = ({ posts }) => {
           </div>
         </div>
       </div>
-      
 
-      <div class="relative overflow-x-auto">
-        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-          <thead class="text-xs text-gray-700 uppercase bg-[#FFD57F] dark:bg-[#FFD57F] dark:text-black">
+      <div class="relative">
+        <table className="w-full text-xs text-left text-gray-500 font-bold dark:text-gray-400 border-collapse border border-slate-500 mt-8">
+          {" "}
+          <thead className=" text-white font-bold text-md uppercase bg-[#FFD57F] dark:bg-[#FFD56F] dark:text-black">
             <tr>
-              <th className="px-6 py-3 border border-slate-600 lg:inline-flex md:inline-flex">ID</th>
-              <th className="px-6 py-3 border border-slate-600  lg:inline-flex lg:w-60 text-center md:inline-flex md:w-[200px]">Food Name</th>
-              <th className="px-6 py-3 border border-slate-600 hidden  lg:inline-flex md:inline-flex md:w-[224px] lg:w-56">
+              <th className="md:px-6 py-3 px-2 border border-slate-600 md:w-[150px] ">
+                ID
+              </th>
+              <th className="md:px-6 py-3 px-2 border border-slate-600 md:w-[122px] ">
+                Food Name
+              </th>
+              <th className=" px-6 py-6 border border-slate-600 hidden lg:inline-flex md:w-[115px] ">
                 Food Category
               </th>
-              <th className="px-6 py-3 border border-slate-600 hidden lg:inline-flex lg:w-44">
+              <th className="md:px-6 py-6 md:py-8 border border-slate-600 hidden lg:inline-flex md:w-[115px] ">
                 Protiens(g)
               </th>
-              <th className="px-6 py-3 border border-slate-600 hidden lg:inline-flex lg:w-[120px]">
+              <th className="md:px-6 py-6 md:py-8 border border-slate-600 hidden lg:inline-flex md:w-[115px]">
                 Carbs(g)
               </th>
-              <th className="px-6 py-3 border border-slate-600 hidden lg:inline-flex " >
+              <th className="md:px-6 py-6 md:py-8  border border-slate-600 hidden lg:inline-flex md:w-[115px]">
                 Fats(g)
               </th>
-              <th className="px-6 py-3 border border-slate-600 hidden lg:inline-flex ">
+              <th className="md:px-6 py-6 md:py-8 border border-slate-600 hidden lg:inline-flex md:w-[115px]">
                 Calories
               </th>
-              <th className="px-6 py-3 border border-slate-600 inli lg:inline-flex md:inline-flex">Action</th>
+              <th className="md:px-6 py-3 px-2 border border-slate-600 md:w-[100px]  ">
+                Action
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -254,41 +260,6 @@ const Test = ({ posts }) => {
           </tbody>
         </table>
       </div>
-
-      <table className="w-full text-xs text-left text-gray-500 font-bold dark:text-gray-400 border-collapse border border-slate-500 mt-8">
-        {" "}
-        <thead className=" text-white font-bold text-md uppercase bg-[#FFD57F] dark:bg-[#FFD56F] dark:text-black">
-          <tr>
-            <th className="px-6 py-3 border border-slate-600">ID</th>
-            <th className="px-6 py-3 border border-slate-600">Food Name</th>
-            <th className="px-6 py-3 border border-slate-600 hidden ">
-              Food Category
-            </th>
-            <th className="px-6 py-3 border border-slate-600 hidden ">
-              Protiens(g)
-            </th>
-            <th className="px-6 py-3 border border-slate-600 hidden ">
-              Carbs(g)
-            </th>
-            <th className="px-6 py-3 border border-slate-600 hidden ">
-              Fats(g)
-            </th>
-            <th className="px-6 py-3 border border-slate-600 hidden">
-              Calories
-            </th>
-            <th className="px-6 py-3 border border-slate-600 ">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {searchInput.length > 1
-            ? filteredResults.map((post) => {
-                return <Table post={post} mealNumber={mealNumber} />;
-              })
-            : posts.map((post) => {
-                return <Table post={post} mealNumber={mealNumber} />;
-              })}
-        </tbody>
-      </table>
     </div>
   );
 };

@@ -146,25 +146,25 @@ const Table = ({ post, mealNumber }) => {
           </li>
         </ul>
       </td>
-      <td className="px-6 py-4 border border-slate-700 text-black text-center">
+      <td className="md:px-6 py-3 px-2 border border-slate-600 md:w-[122px] text-black ">
         {post.Food_Name}
       </td>
-      <td className="px-6 py-4 border border-slate-700 text-black text-center">
+      <td className="px-6 py-6 md:py-8 border border-slate-600 hidden lg:inline-flex md:w-[115px] text-black">
         {post.Food_Category}
       </td>
-      <td className="px-6 py-4 border border-slate-700 text-black text-center">
+      <td className="md:px-6 py-6 md:py-8 border border-slate-600 hidden lg:inline-flex md:w-[115px] text-black">
         {post.Proteins}
       </td>
-      <td className="px-6 py-4 border border-slate-700 text-black text-center">
+      <td className="md:px-6 py-6 md:py-8 border border-slate-600 hidden lg:inline-flex md:w-[115px] text-black">
         {post.Carbohydrates}
       </td>
-      <td className="px-6 py-4 border border-slate-700 text-black text-center">
+      <td className="md:px-6 py-6 md:py-8  border border-slate-600 hidden lg:inline-flex md:w-[115px] text-black">
         {post.Fats}
       </td>
-      <td className="px-6 py-4 border border-slate-700 text-black text-center">
+      <td className="md:px-6 py-6 md:py-8 border border-slate-600 hidden lg:inline-flex md:w-[115px] text-black">
         {post.Total_Calories_In_KCal}
       </td>
-      <td className="px-6 py-4 border border-slate-700 text-black text-center">
+      <td className="lg:px-6 py-4 px-2 border border-slate-700 text-black text-center ">
         <button
           id={post.id}
           onClick={getId}

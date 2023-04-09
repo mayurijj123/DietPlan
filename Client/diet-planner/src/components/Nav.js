@@ -8,7 +8,6 @@ const navigation = [
   { name: "Home", href: "/", current: true },
   { name: "About", href: "/", current: false },
   { name: "Contact", href: "/", current: false },
- 
 ];
 
 function classNames(...classes) {
@@ -16,12 +15,14 @@ function classNames(...classes) {
 }
 const Nav = () => {
   return (
-    <Disclosure as="nav" className="bg-gradient-to-r from-[#FF7B54]  to-[#FFB26B]">
+    <Disclosure
+      as="nav"
+      className="bg-gradient-to-r from-[#FF7B54]  to-[#FFB26B]"
+    >
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
-            
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-green-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
@@ -34,18 +35,17 @@ const Nav = () => {
                 </Disclosure.Button>
               </div>
               <a className="flex  ml-20 lg:ml-0 ">
-            <img
-              src={wellness}
-              className="h-6 mr-3 sm:h-9 rounded-full"
-              alt="Flowbite Logo"
-            />
-            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-              Holistic Wellness Clinic
-            </span>
-          </a>
+                <img
+                  src={wellness}
+                  className="h-6 mr-3 sm:h-9 rounded-full"
+                  alt="Flowbite Logo"
+                />
+                <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+                  Holistic Wellness Clinic
+                </span>
+              </a>
               <div className="flex flex-1 items-right justify-right sm:items-stretch sm:justify-end">
                 <div className="hidden sm:ml-6 sm:block ">
-
                   <div className="flex space-x-4 ">
                     {navigation.map((item) => (
                       <a
@@ -65,13 +65,10 @@ const Nav = () => {
                   </div>
                 </div>
               </div>
-              
             </div>
           </div>
-          
 
           <Disclosure.Panel className="sm:hidden">
-          
             <div className="space-y-1 px-2 pt-2 pb-3">
               {navigation.map((item) => (
                 <Disclosure.Button
@@ -94,7 +91,6 @@ const Nav = () => {
         </>
       )}
     </Disclosure>
-    
   );
 };
 

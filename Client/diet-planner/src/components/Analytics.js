@@ -4,6 +4,7 @@ import Sidebar from "./Sidebar";
 import {
   PieChart,
   Pie,
+  LabelList,
   Legend,
   Sector,
   Cell,
@@ -37,11 +38,12 @@ const Analytics = () => {
   };
   sumData();
   const chartdata = [
-    { name: `Protiens : ${totalProteins}`, students: totalProteins },
-    { name: `Carbohydrates : ${totalCarbs}`, students: totalCarbs },
-    { name: `Fats : ${totalFats}`, students: totalFats },
-    { name: `Calories : ${totalCalories}`, students: totalCalories },
+    { name: `Protiens : ${totalProteins.toFixed(2)}`, students: totalProteins },
+    { name: `Carbohydrates : ${totalCarbs.toFixed(2)}`, students: totalCarbs },
+    { name: `Fats : ${totalFats.toFixed(2)}`, students: totalFats },
+    { name: `Calories : ${totalCalories.toFixed(2)}`, students: totalCalories },
   ];
+
   const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
   const RADIAN = Math.PI / 180;
   const renderCustomizedLabel = ({
@@ -70,25 +72,35 @@ const Analytics = () => {
       </text>
     );
   };
-
+  let renderLabel = function (entry) {
+    return entry.name;
+  };
   return (
     <div className="flex">
       <div>
         <Sidebar />
       </div>
 
-      <div className="flex-1 p-8">
-        <ResponsiveContainer className="text-center">
+      <div className="flex-1 p-8 w-64 mt-0 bg-fixed">
+        <ResponsiveContainer width="100%" height="100%" className="text-center">
           <PieChart>
-            <Legend layout="vertical" verticalAlign="top" align="top" />
+            <Legend
+              layout="horizontal"
+              verticalAlign="top"
+              align="top"
+              // position="relative"
+            />
             <Pie
               data={chartdata}
               dataKey="students"
-              outerRadius={80}
+              outerRadius={180}
               fill="green"
-              labelLine={false}
-              label={renderCustomizedLabel}
+              labelLine={true}
+              // label={renderCustomizedLabel}
+              label={renderLabel}
             >
+              <LabelList content={renderCustomizedLabel} position="insideTop" />
+
               {data.map((entry, index) => (
                 <Cell
                   key={`cell-${index}`}

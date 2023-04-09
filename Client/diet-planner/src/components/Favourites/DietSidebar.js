@@ -95,6 +95,21 @@ const DietSidebar = (datalength) => {
                 </span>
               </a>
             </li>
+            <li>
+              <a
+                href="/bmi"
+                className="flex items-center p-2 text-base font-normal text-black rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-white"
+              >
+                <AiFillPieChart size={25} className="text-black" />
+                <span
+                  className={`flex-1 ml-3 whitespace- ${
+                    !open && "hidden"
+                  } origin-left duration-200 `}
+                >
+                  BMI
+                </span>
+              </a>
+            </li>
           </ul>
         </ul>
       </div>
